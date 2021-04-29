@@ -33,6 +33,15 @@ You can `define` values like this,
 > (+ r 1)
 > 4
 ```
+Or functions,
+```
+> (defun square (x) (* x x))
+> (square 2)
+> 4
+> (defun mul3 (x y z) (* x y z))
+> (mul3 2 3 4)
+> 24
+```
 
 ## Usage
 

@@ -91,10 +91,23 @@ def eva(expr):
     if eva(expr[0]): return eva(expr[1])
     else:            return eva(expr[2])
 
+  # define variables and functions
   elif e == 'define':
-    state[expr[0]] = eva(expr[1])  # define key:value pair
+    state[expr[0]] = eva(expr[1])  # define key:value pair for variable
+  elif e == 'defun':
+    state[expr[0]] = expr[1:]  # define key:value pair for function
   elif ( e in state.keys() ):  # check if key exists and return value
-    return state[e] 
+    if (type(state[e]) is list):     # if the value is a list, then treat as a function body
+      args = state[e][0]
+      body = state[e][1]
+      k = 0
+      y = body
+      for i in args:
+        y = [expr[k] if x==args[k] else x for x in y]
+        k += 1
+      return eva(y)
+    else:                      # else it's a stored variable; return it
+      return state[e] 
 
   elif ( type(e) is list ):
     print('is a list')
