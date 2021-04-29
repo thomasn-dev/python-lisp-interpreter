@@ -10,7 +10,7 @@ def get_input(user_input_bool):
   if user_input_bool:
     return input("> ")
   else:
-    return sys.argv[1]
+    return sys.argv[2]
 
 # returns a list of tokens
 def tokenise(inp):
@@ -69,8 +69,11 @@ def eva(expr):
     return e
     
   
+if sys.argv[1] == 'testing':
+  user_input = False
+else:
+  user_input = True
 
-user_input = True
 while True:
   try:
     inp = get_input(user_input)
