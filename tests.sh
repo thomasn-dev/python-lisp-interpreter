@@ -28,6 +28,10 @@ Test="(+ 10 (* 8 (+ 2 2)))"
 echo "Begin Test: $Test"
 python3 run.py 'testing' "$Test"
 
+Test="(expt 10 (+ 2 2))"
+echo "Begin Test: $Test"
+python3 run.py 'testing' "$Test"
+
 Test="(if (> 10 20) (+ 1 1) (+ 3 3))"
 echo "Begin Test: $Test"
 python3 run.py 'testing' "$Test"

@@ -73,6 +73,9 @@ def eva(expr):
       else:
         v /= eva(x)
     return v
+  elif e == 'expt':
+    v += pow(eva(expr[0]), eva(expr[1]))
+    return v
 
   # equalities
   elif e == '=':   return eva(expr[0]) == eva(expr[1])
