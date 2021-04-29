@@ -1,5 +1,9 @@
 #!/bin/bash
 
+Test="abc"
+echo "Begin Test: $Test"
+python3 run.py 'testing' "$Test"
+
 Test="(= 1 1)"
 echo "Begin Test: $Test"
 python3 run.py 'testing' "$Test"
@@ -31,3 +35,4 @@ python3 run.py 'testing' "$Test"
 Test="(if (T) (+ 1 1) (+ 3 3))"
 echo "Begin Test: $Test"
 python3 run.py 'testing' "$Test"
+
