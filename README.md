@@ -2,6 +2,40 @@
 
 python v3.9.1+
 
+## Description
+
+An interpreter for Lisp written in python 3. It can interpret atoms or lists. A list is defined with parentheses (), for example,
+```
+(1 2 3)
+```
+is a list containing 1 2 3. Then aritmetic expressions can be used to evaluate a list, e.g.
+```
+> (+ 1 2 3)
+> 6
+```
+or -, \*, / can be used. 
+It can use floating numbers,
+```
+> (/ 10.0 4.0)
+> 2.5 
+```
+
+There is an `if` statement like this,
+```
+> (if (2 > 1) (+ 3 3) (+ 1 1))
+> 6
+```
+that is if 2 > 1 is true the (+ 3 3) will be evaluated, if the first expression is not true then (+ 1 1) will be evaluated.
+
+You can `define` values like this,
+```
+> (define r 3)
+> (+ r 1)
+> 4
+```
+
+## Usage
+
 To start the Lisp interpreter with user input from command line,
 
 ```python
