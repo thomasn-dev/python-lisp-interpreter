@@ -7,6 +7,12 @@ To start the Lisp interpreter with user input from command line,
 ```python
 python run.py 'user_inp'
 ```
+Then you can perform actions e.g.
+```
+> (define r 3)
+> (* r r)
+> 9
+```
 
 or run tests in bash,
 
