@@ -103,16 +103,12 @@ def eva(expr):
       k = 0
       y = body
       for i in args:
-        y = [expr[k] if x==args[k] else x for x in y]
+        y = [expr[k] if x==args[k] else x for x in y]  # replace variable names with real values
         k += 1
       return eva(y)
     else:                      # else it's a stored variable; return it
       return state[e] 
-
-  elif ( type(e) is list ):
-    print('is a list')
-    return eva(e)
-  # if it's not a defined symbol or statement
+  # if it's not a defined symbol or statement just return
   else:
     return e
     
